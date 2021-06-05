@@ -61,8 +61,6 @@ function onFetchError(err) {
     closer: true,
     hide: true,
     sticker: false,
-    mouseReset: true,
-    shadow: true,
     delay: 2000,
   })
 }
