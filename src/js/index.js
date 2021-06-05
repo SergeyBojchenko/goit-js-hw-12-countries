@@ -29,10 +29,6 @@ function onSearch(e) {
         closer: true,
         hide: true,
         sticker: false,
-        mouseReset: true,
-        shadow: true,
-        width: '350px',
-        minHeight: '14px',
         delay: 2000,
       });
     }
@@ -67,8 +63,6 @@ function onFetchError(err) {
     sticker: false,
     mouseReset: true,
     shadow: true,
-    width: '350px',
-    minHeight: '14px',
     delay: 2000,
   })
 }
