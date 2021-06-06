@@ -15,7 +15,7 @@ search.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(e) {
 
-  resetPage();
+  updatePage();
 
   const searchQuery = e.target.value;
 
@@ -33,26 +33,27 @@ function onSearch(e) {
       });
     }
     if(countries.length <= 10 && countries.length > 1) {
-      createList(countries);
+      updatePage(listTpl(countries));
     }
     if(countries.length === 1) {
-      createCard(countries);
+      updatePage(cardTpl(countries));
     }
   })
   .catch(onFetchError);
 }
 
-function createList(countries) {
-  listContainer.innerHTML = listTpl(countries);
+function updatePage(markup = "") {
+listContainer.innerHTML = markup;
 }
 
-function createCard(country) {
-  listContainer.innerHTML = cardTpl(country);
-}
+//добавить список стран
+// updatePage(listTpl(countries));
 
-function resetPage() {
-  listContainer.innerHTML = '';
-}
+//добавить данные по одной стране
+// updatePage(cardTpl(countries));
+
+//очистить разметку страницы
+// updatePage();
 
 function onFetchError(err) {
   error({
